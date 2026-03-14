@@ -31,7 +31,7 @@ export default function ReservasPage() {
         .eq("inquilino_id", userData.user.id)
         .order("fecha_inicio", { ascending: false });
 
-      setReservas((data as Reserva[]) ?? []);
+      setReservas((data as unknown as Reserva[]) ?? []);
       setLoading(false);
     };
     cargar();
